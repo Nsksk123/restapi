@@ -30,8 +30,9 @@ Route::prefix('v1')->group(function () {
             })->name('user');
 
             //route logout
-            Route::post('/logout', App\Http\Controllers\Api\Admin\LogoutController::class, ['as' => 'admin']);
-            Route::apiResource('/consultation', App\Http\Controllers\Api\Society\RequestConsultation::class, ['as' => 'admin']);
+                Route::post('/logout', App\Http\Controllers\Api\Admin\LogoutController::class, ['as' => 'admin']);
+                Route::apiResource('/consultation', App\Http\Controllers\Api\Admin\::class, ['as' => 'admin']);
+                Route::apiResource('/user', App\Http\Controllers\Api\Admin\UserController::class, ['as' => 'admin']);
 
         });
     }
